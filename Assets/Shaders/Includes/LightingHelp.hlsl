@@ -31,3 +31,19 @@ void ChooseColor_float(float3 Highlight, float3 Shadow, float Diffuse, float Thr
         OUT = Highlight;
     }
 }
+
+void Choose3Color_float(float3 Highlight, float3 MidColor, float3 Shadow, float Diffuse, float2 Threshold, out float3 OUT)
+{
+    if (Diffuse < Threshold.x)
+    {
+        OUT = Shadow;
+    }
+    else if (Diffuse < Threshold.y)
+    {
+        OUT = MidColor;
+    } 
+    else 
+    {
+        OUT = Highlight;
+    }
+}
